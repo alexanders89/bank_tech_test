@@ -30,4 +30,10 @@ describe Account do
     expect { account.withdraw(30.00) }.to raise_error 'Insufficient Funds'
   end
 
+  it 'will not accept strings' do
+    account = Account.new
+    expect { account.deposit('string') }.to raise_error 'Unrecognised amount'
+  end
+
+
 end

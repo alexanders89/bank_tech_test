@@ -9,6 +9,7 @@ class Account
   end
 
   def deposit(amount)
+    fail 'Unrecognised amount' if amount.class != Float
     @balance += amount
   end
 
