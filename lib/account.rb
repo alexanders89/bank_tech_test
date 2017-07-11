@@ -5,10 +5,16 @@ class Account
   end
 
   def balance
-    @balance
+    '%.2f' % @balance
   end
 
   def deposit(amount)
     @balance += amount
   end
+
+  def withdraw(amount)
+    fail 'Insufficient Funds' if @balance - amount <= 0
+    @balance -= amount
+  end
+
 end
